@@ -35,10 +35,18 @@ module.exports = {
             {test:/\.(jpg|png|gif|bpm|jpeg)$/,use:'url-loader'},
             // 处理字体文件的loader
             {test:/\.(ttf|eot|svg|woff|woff2)$/,use:'url-loader'},
-            {test:/\.js$/,use:'babel-loader',exclude:/node_modules/}
+            {test:/\.js$/,use:'babel-loader',exclude:/node_modules/},
+            // 处理.vue文件
+            {test:/\.vue$/,use:'vue-loader'}
 
         ]
 
+    },
+    resolve: {
+        alias: {// 修改vue被导入时候加载包的路径
+            // "vue$":"vue/dist/vue.js"
+
+        }
     }
     
 
